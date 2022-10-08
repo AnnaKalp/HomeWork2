@@ -2,40 +2,48 @@
 потом вводит M чисел ЧЕРЕЗ ENTER. Посчитайте, сколько
  чисел больше 0 ввёл пользователь.*/
 
- Console.WriteLine ("Введите числа:"!);
-string numbers = Console.ReadLine();
-string[] newNumbers = new string [numbers.Length];
-int x = 0;
-for (int i = 0; i < newNumbers.Length; i++)
+/* 1-ый способ:
+Console.Clear();
+ 
+int numberCount = int.Parse(Console.ReadLine()!);
+int counter = 0;
+ 
+for (int i = 0; i < numberCount; i++)
 {
-  if (numbers[i] == ',')
-  {
-    x++;
-  }
-  else
-  {
-    newNumbers[x] = newNumbers[x] + $"{numbers[i]}";
-  }
+    int currentNumber = int.Parse(Console.ReadLine()!);
+    if (currentNumber > 0)
+    {
+        counter++;
+    }
 }
-x++;
-int [] resultNumbers = new int[x];
-PrintArray (resultNumbers, newNumbers);
-int sum = 0;
-for (int i = 0; i < x; i++)
+ 
+Console.WriteLine(counter);*/
+ 
+ 
+ 
+ 
+Console.Clear();
+ 
+int numberCount = int.Parse(Console.ReadLine()!);
+int[] numberArray = new int[numberCount];
+ 
+for (int i = 0; i < numberArray.Length; i++)
 {
-  if (resultNumbers[i]>0)
-  {
-    sum++;
-  }
+    numberArray[i] = int.Parse(Console.ReadLine()!);
 }
-Console.WriteLine ("Количество чисел больше 0: "+sum);
-
-void PrintArray (int [] array, string [] string1)
+ 
+Console.WriteLine(CountPositiveNumbers(numberArray));
+ 
+ 
+int CountPositiveNumbers(int[] array)
 {
-  for (int i = 0; i < array.Length; i++)
-  {
-  array[i] = Convert.ToInt32(string1[i]);
-  Console.Write (array[i]+"  ");
-  }
-Console.WriteLine();
+    int counter = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0)
+        {
+            counter++;
+        }
+    }
+    return counter;
 }
