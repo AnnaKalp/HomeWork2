@@ -33,13 +33,9 @@ void PrintArray(int[,,] array)
             }
             Console.WriteLine();
         }
-        Console.WriteLine();
     }
 }
- 
- 
- 
-void FillArray(int[,,] array)
+ void FillArray(int[,,] array)
 {
     Random generator = new Random();
  

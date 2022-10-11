@@ -15,7 +15,6 @@ double[,] array = new double[m, n];
 FillArray(array);
 PrintArray(array);
  
-
 void PrintArray(double[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
