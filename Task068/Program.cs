@@ -11,14 +11,11 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 Ackerman(m,n);
 
-
-// вызов функции Аккермана
 void Ackerman(int m, int n)
 {
     Console.Write(Ack(m, n)); 
 }
 
-// функция Аккермана
 int Ack(int m, int n)
 {
     if (m == 0)
