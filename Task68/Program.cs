@@ -2,14 +2,24 @@
  помощью рекурсии. Даны два неотрицательных числа m и n.
 m = 2, n = 3 -> A(m,n) = 9
 m = 3, n = 2 -> A(m,n) = 29*/
+ 
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-int PrintNumber(string input)
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Ackerman(m,n);
+
+
+// вызов функции Аккермана
+void Ackerman(int m, int n)
 {
-    Console.Write(input);
-    int output = Convert.ToInt32(Console.ReadLine());
-    return output;
+    Console.Write(Ack(m, n)); 
 }
-int Ackerman(int m, int n)
+
+// функция Аккермана
+int Ack(int m, int n)
 {
     if (m == 0)
     {
@@ -17,16 +27,10 @@ int Ackerman(int m, int n)
     }
     else if (n == 0 && m > 0)
     {
-        return Ackerman(m - 1, 1);
+        return Ack(m - 1, 1);
     }
     else
     {
-        return Ackerman(m - 1, Ackerman(m, n - 1));
+        return (Ack(m - 1, Ack(m, n - 1)));
     }
 }
-
-int m = PrintNumber("Ввести число m: ");
-int n = PrintNumber("Ввести число n: ");
-int ack = Ackerman(m, n);
-Console.Write($"m = {m}, n = {n} - > A(m,n) = {ack} ");
-
